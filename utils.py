@@ -29,8 +29,8 @@ def args():
   parser.add_argument("--led-chain", action="store", help="Daisy-chained boards. (Default: 1)", default=1, type=int)
   parser.add_argument("--led-parallel", action="store", help="For Plus-models or RPi2: parallel chains. 1..3. (Default: 1)", default=1, type=int)
   parser.add_argument("--led-pwm-bits", action="store", help="Bits used for PWM. Range 1..11. (Default: 11)", default=11, type=int)
-  parser.add_argument("--led-brightness", action="store", help="Sets brightness level. Range: 1..100. (Default: 100)", default=100, type=int)
-  parser.add_argument("--led-gpio-mapping", help="Hardware Mapping: regular, adafruit-hat, adafruit-hat-pwm" , choices=['regular', 'adafruit-hat', 'adafruit-hat-pwm'], type=str)
+  parser.add_argument("--led-brightness", action="store", help="Sets brightness level. Range: 1..100. (Default: 100)", default=60, type=int)
+  parser.add_argument("--led-gpio-mapping", help="Hardware Mapping: regular, adafruit-hat, adafruit-hat-pwm" , choices=['regular', 'adafruit-hat', 'adafruit-hat-pwm'], default="adafruit-hat-pwm", type=str)
   parser.add_argument("--led-scan-mode", action="store", help="Progressive or interlaced scan. 0 = Progressive, 1 = Interlaced. (Default: 1)", default=1, choices=range(2), type=int)
   parser.add_argument("--led-pwm-lsb-nanoseconds", action="store", help="Base time-unit for the on-time in the lowest significant bit in nanoseconds. (Default: 130)", default=130, type=int)
   parser.add_argument("--led-show-refresh", action="store_true", help="Shows the current refresh rate of the LED panel.")
@@ -40,6 +40,7 @@ def args():
   parser.add_argument("--led-pixel-mapper", action="store", help="Apply pixel mappers. e.g \"Rotate:90\"", default="", type=str)
   parser.add_argument("--led-row-addr-type", action="store", help="0 = default; 1 = AB-addressed panels. (Default: 0)", default=0, type=int, choices=[0,1])
   parser.add_argument("--led-multiplexing", action="store", help="Multiplexing type: 0 = direct; 1 = strip; 2 = checker; 3 = spiral; 4 = Z-strip; 5 = ZnMirrorZStripe; 6 = coreman; 7 = Kaler2Scan; 8 = ZStripeUneven. (Default: 0)", default=0, type=int)
+  parser.add_argument("--led-panel-type", action="store", help="Needed to initialize special panels. Supported: 'FM6126A'", default="FM6126A", type=str)
 
   # User Options
   parser.add_argument("--fav-team", action="store", help="ID of the team to fallow. (Default:8 (Montreal Canadien)) Change the default in the config.json", type=int)
@@ -62,6 +63,7 @@ def led_matrix_options(args):
   options.brightness = args.led_brightness
   options.pwm_lsb_nanoseconds = args.led_pwm_lsb_nanoseconds
   options.led_rgb_sequence = args.led_rgb_sequence
+  options.panel_type = args.led_panel_type
   try:
     options.pixel_mapper_config = args.led_pixel_mapper
   except AttributeError:

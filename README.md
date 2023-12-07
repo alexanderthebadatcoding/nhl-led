@@ -1,7 +1,7 @@
 # nba-led-scoreboard
 ![I promise to change this picture when I actually build my own](imgs/pregame_state.jpg)
 
-Display daily NBA action on an raspberry pi powered LED matrix. Currently supports 64x32 boards only.
+Display daily NHL action on an raspberry pi powered LED matrix. Currently supports 64x32 boards only.
 
 ### Credit and inpsiration
 This project was inspired by the [nfl-led-scoreboard](https://github.com/mikemountain/nfl-led-scoreboard/) which was inspired by the [nhl-led-scoreboard](https://github.com/riffnshred/nhl-led-scoreboard), who based THEIR project off of the [mlb-led-scoreboard](https://github.com/MLB-LED-Scoreboard/mlb-led-scoreboard). Go check them out.
