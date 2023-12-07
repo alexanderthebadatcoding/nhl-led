@@ -114,7 +114,7 @@ class MainRenderer:
             self.draw.text((25, 15), 'VS', font=self.font)
             # Put the data on the canvas
             self.canvas.SetImage(self.image, 0, 0)
-            if self.data.nba_logos:
+            if self.data.nhl_logos:
                 # Open the logo image file
                 away_team_logo = Image.open('logos/{}H.png'.format(game['awayteam'])).resize((20, 20), 1)
                 home_team_logo = Image.open('logos/{}H.png'.format(game['hometeam'])).resize((20, 20), 1)
@@ -153,7 +153,7 @@ class MainRenderer:
             self.draw.text((25, 15), 'VS', font=self.font)
             # Put the data on the canvas
             self.canvas.SetImage(self.image, 0, 0)
-            if self.data.nba_logos:
+            if self.data.nhl_logos:
                 # Open the logo image file
                 away_team_logo = Image.open('logos/{}H.png'.format(game['awayteam'])).resize((20, 20), 1)
                 home_team_logo = Image.open('logos/{}H.png'.format(game['hometeam'])).resize((20, 20), 1)
@@ -203,7 +203,7 @@ class MainRenderer:
         self.draw.multiline_text((59 - home_score_size, 19), homescore, fill=(255, 255, 255), font=self.font, align="center")
         # Put the data on the canvas
         self.canvas.SetImage(self.image, 0, 0)
-        if self.data.nba_logos:
+        if self.data.nhl_logos:
             # Open the logo image file
             away_team_logo = Image.open('logos/{}H.png'.format(game['awayteam'])).resize((20, 20), 1)
             home_team_logo = Image.open('logos/{}H.png'.format(game['hometeam'])).resize((20, 20), 1)
@@ -241,7 +241,7 @@ class MainRenderer:
         self.draw.multiline_text((26, 0), "END", fill=(255, 255, 255), font=self.font_mini,align="center")
         # Put the data on the canvas
         self.canvas.SetImage(self.image, 0, 0)
-        if self.data.nba_logos:
+        if self.data.nhl_logos:
             # Open the logo image file
             away_team_logo = Image.open('logos/{}H.png'.format(game['awayteam'])).resize((20, 20), 1)
             home_team_logo = Image.open('logos/{}H.png'.format(game['hometeam'])).resize((20, 20), 1)
