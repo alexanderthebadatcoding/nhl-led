@@ -40,8 +40,8 @@ def args():
   parser.add_argument("--led-pixel-mapper", action="store", help="Apply pixel mappers. e.g \"Rotate:90\"", default="", type=str)
   parser.add_argument("--led-row-addr-type", action="store", help="0 = default; 1 = AB-addressed panels. (Default: 0)", default=0, type=int, choices=[0,1])
   parser.add_argument("--led-multiplexing", action="store", help="Multiplexing type: 0 = direct; 1 = strip; 2 = checker; 3 = spiral; 4 = Z-strip; 5 = ZnMirrorZStripe; 6 = coreman; 7 = Kaler2Scan; 8 = ZStripeUneven. (Default: 0)", default=0, type=int)
-  # Uncomment this code if you have a different Panel type and add it below as well.
-  # parser.add_argument("--led-panel-type", action="store", help="Needed to initialize special panels. Supported: 'FM6126A'", type=str)
+  # Uncomment this code if you have a different Panel type and add it to the options below as well.
+  # parser.add_argument("--led-panel-type", action="store", help="Needed to initialize special panels. Supported: 'FM6126A'", default="FM6126A", type=str)
 
   # User Options
   parser.add_argument("--fav-team", action="store", help="ID of the team to fallow. (Default:8 (Montreal Canadien)) Change the default in the config.json", type=int)
