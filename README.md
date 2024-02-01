@@ -1,4 +1,4 @@
-# nba-led-scoreboard
+# NHL-led-scoreboard
 ![I promise to change this picture when I actually build my own](imgs/pregame_state.jpg)
 
 Display daily NHL action on an raspberry pi powered LED matrix. Currently supports 64x32 boards only.
